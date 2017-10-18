@@ -211,7 +211,8 @@ console.log(player.firstName);
 //TODO: get the lastName property using the 
 //array-like syntax, using a variable set to "lastName"
 //as the expression
-
+var Name = "lastName";
+console.log(player[Name]);
 
 //these key/value pairs are often called "properties"
 //because the syntax looks a lot like property 
@@ -219,13 +220,14 @@ console.log(player.firstName);
 //or removed at any time.
 //TODO: add a new `email` property set to "mary@example.com"
 //and write that to the console
+player.email = "mary@example.com";
+console.log(player.email);
 
 //accessing a key that doesn't exist yet
 //returns `undefined` (no error)
 //TODO: write the value of the `phone` property to the console
 //(doesn't exist, so it should just write "undefined", with no error)
-player.email = "asdfasd@gmail.com";
-console.log(player.firstName,player.lastName);
+console.log(player.phone);
 
 //you can iterate over all keys/values using
 //the for...in syntax
@@ -267,7 +269,7 @@ let myCourses = [
         instructors:["Sally","Bill"]
     },
     {
-        name:"INFO 444",
+        name:"INFO 200",
         section:"A",
         instructors:["Kangwoo","Troy"]
     }
@@ -302,7 +304,9 @@ function getGreeting(thePlayer) {
 }
 //TODO: call getGreeting() passing your `player` variable
 //and write the return value to the console
+function getGreeting(){
 
+}
 
 //TODO: change the getGreeting() function above
 //to include the player's last name as well as first name,
@@ -325,6 +329,9 @@ function getGreeting(thePlayer) {
  */
 function levelUp(thePlayer) {
     //TODO: implement this function
+    thePlayer.level++;
+    thePlayer.totalPoints += Math.round(Math.ceil(thePlayer.totalPoints) * 0.1);
+    return thePlayer;
 }
 
 //create a new player
@@ -352,7 +359,11 @@ console.log("points after leveling-up: %d", levelUp(player2).totalPoints);
  */
 function randomIntegers(amount, max) {
     //TODO: implement this function according to the comments above
-
+    let arrayRandomNums = [];
+    for(let i=0;i<amount;i++){
+        arrayRandomNums.push(Math.round(Math.random()*max));
+    }
+    return arrayRandomNums;     
 }
 
 let randomNums = randomIntegers(10, 100);
@@ -365,7 +376,11 @@ console.log("random integers:", randomNums);
  */
 function max(arrayOfNumbers) {
     //TODO: implement this function according to the comments above
-
+    let max = arrayOfNumbers[0];
+    for(let i = 0;i<arrayOfNumbers.length; i++){
+        max = (arrayOfNumbers[i] > max) ? arrayOfNumbers[i] : max;
+    }
+    return max;
 }
 
 console.log("the maximum value in %o is %d", randomNums, max(randomNums));
@@ -378,7 +393,9 @@ console.log("the maximum value in %o is %d", randomNums, max(randomNums));
  * @returns {*[]}
  */
 function reverseArray(input) {
-    //TODO: implement this function according to the comments    
+    //TODO: implement this function according to the comments
+    
+
 }
 
 console.log("random integers reversed:", reverseArray(randomNums));
@@ -401,7 +418,7 @@ it doesn't put anything in between the elements.
 //TODO: use .split() and .join() to reverse this string
 //remember that you already have a reverseArray() function
 let stringToReverse = "stressed";
-
+let reverseString = stringToReverse.split("").join("");
 
 /* FUNCTIONS CALLING FUNCTIONS */
 
