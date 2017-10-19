@@ -13,6 +13,7 @@ const PAGE_SIZE = 100;
 //this has no effect at runtime, but will help us catch
 //errors while coding.
 const PREV_PAGE_BUTTON = /** @type {HTMLButtonElement} */(document.querySelector("#prev-page"));
+// # -> id
 const NEXT_PAGE_BUTTON = /** @type {HTMLButtonElement} */(document.querySelector("#next-page"));
 
 //reference to the <input id="name-filter">
@@ -50,8 +51,18 @@ let state = {
 //TODO: implement functions to render the current state
 //to the page as new <tr> and <td> elements within the
 //<tbody> element that is already in the page.
-
-
+let tableBody = document.querySelector("tbody");
+let tableRow = document.createElement("tr");
+let tableData1 = document.createElement("td");
+let tableData2 = document.createElement("td");
+let tableData3 = document.createElement("td");
+tableData1.innerText = "Darth";
+tableData2.innerText = "M";
+tableData3.innerText = "1";
+tableRow.appendChild(tableData1);
+tableRow.appendChild(tableData2);
+tableRow.appendChild(tableData3);
+tableBody.appendChild(tableRow);
 
 
 //TODO: listen for the "click" event raised by the 
