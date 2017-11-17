@@ -1,5 +1,6 @@
 import React from "react";
 //Task
+import Task from "./Task";
 
 export default class TaskList extends React.Component{
     constructor(props){
@@ -10,7 +11,7 @@ export default class TaskList extends React.Component{
     }
     
     componentDidMount(){
-        this.props.taskRef.on("value", 
+        this.props.tasksRef.on("value", 
             snapshot =>this.setState(
             {tasksSnapShot:snapshot}));
         
@@ -32,9 +33,10 @@ export default class TaskList extends React.Component{
         } 
         
         let tasks =[];
-        this.state.tasksSnapShot.forEach(task=>{
-            tasks.push(<Task />);
+        this.state.tasksSnapShot.forEach(taskSnapShot=>{
+            tasks.push(<Task key= {taskSnapShot.key} taskSnapShot={taskSnapShot}/>);
         });
+
         return (
             <ul>
                 {tasks}

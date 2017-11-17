@@ -17,6 +17,7 @@ export default class NewTaskForm extends Component{
             newTaskTitle: ""
         });
     }
+    
     render(){
         return (
             <form onSubmit = {evt => this.handleSubmit(evt)}>

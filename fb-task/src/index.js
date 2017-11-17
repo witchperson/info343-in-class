@@ -17,12 +17,11 @@ var config = {
     storageBucket: "info343-task.appspot.com",
     messagingSenderId: "295188582522"
   };
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
-  firebase.auth().signInAnonymously()
+firebase.auth().signInAnonymously()
     .then(()=>{
         ReactDOM.render(<App />, document.getElementById('root'));
         registerServiceWorker();
     })
     .catch(err=>console.log(err));
-
